@@ -1,0 +1,7 @@
+.toggler {
+	cursor: pointer;
+	background: var(--secondary);
+	border: none;
+	display: flex;
+	align-content: center;
+}

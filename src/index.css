@@ -51,6 +51,10 @@ body {
 	margin: 0 20px;
 }
 
+.currentColor {
+	stroke: currentColor;
+}
+
 @media (min-width: 1100px) {
 	.container {
 		max-width: 1000px;
