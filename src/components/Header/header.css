@@ -1,5 +1,6 @@
 header {
 	padding: 1.5rem 0;
+	border-bottom: 3px solid var(--secondary);
 }
 
 .logo-container {
@@ -55,9 +56,10 @@ ul.menu li {
 
 .bulbContainer {
 	background: wheat;
+	cursor: pointer;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 740px) {
 	ul.menu {
 		display: flex;
 		background-color: transparent;

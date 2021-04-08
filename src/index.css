@@ -51,6 +51,11 @@ body {
 	margin: 0 20px;
 }
 
+section,
+article {
+	padding: 2rem 0;
+}
+
 .currentColor {
 	stroke: currentColor;
 }

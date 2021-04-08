@@ -1,0 +1,19 @@
+.featured {
+	width: 25px;
+	height: 25px;
+	background: var(--highlight);
+}
+
+.latest {
+	width: 25px;
+	height: 25px;
+	background: var(--secondary);
+}
+
+.page-title {
+	display: flex;
+}
+
+.page-title h2 {
+	margin-left: 0.3rem;
+}

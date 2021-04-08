@@ -1,0 +1,22 @@
+.content {
+	display: flex;
+	flex-direction: column;
+}
+
+.morecontent {
+	width: 100%;
+	padding: 0;
+	margin-right: 0;
+}
+
+@media (min-width: 740px) {
+	.content {
+		flex-direction: row;
+	}
+
+	.morecontent {
+		width: 500px;
+		padding: 2rem;
+		margin-right: 1rem;
+	}
+}

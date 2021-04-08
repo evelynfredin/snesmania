@@ -1,0 +1,26 @@
+.featuredArticle {
+	width: 100%;
+}
+
+.featuredArticle img {
+	width: 100%;
+}
+
+.featuredArticle h3 {
+	text-transform: uppercase;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.featuredArticle .excerpt {
+	margin: 1rem 0;
+}
+
+.featuredArticle .metadata {
+	font-size: 0.8rem;
+	background: var(--inverted);
+	padding: 0.4rem 1rem;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 2px;
+}
