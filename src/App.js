@@ -12,7 +12,7 @@ function App() {
 
 	return (
 		<main style={themes[theme]}>
-			<Header />
+			<Header handleClick={toggleTheme} />
 			<p>Hello world!</p>
 		</main>
 	);

@@ -11,7 +11,7 @@ const themes = {
 		'--primary': '#E5E5E5',
 		'--background': '#2C2D37',
 		'--hover': '#f47188',
-		'--secondary': '#c7c7c7'
+		'--secondary': '#5948AB'
 	}
 };
 
