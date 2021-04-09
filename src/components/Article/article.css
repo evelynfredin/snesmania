@@ -1,0 +1,31 @@
+.article-list {
+	display: flex;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--highlight);
+}
+
+.article-list--col1 {
+	max-width: 300px;
+}
+
+.article-list--col1 img {
+	max-width: 100%;
+}
+
+.article-list--col2 {
+	margin: 0 1rem;
+}
+
+.article-list--col2 h3 {
+	text-transform: uppercase;
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.article-list--col2 .metadata {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+	font-size: 0.8rem;
+}

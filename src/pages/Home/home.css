@@ -1,9 +1,17 @@
 .content {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
 }
 
-.morecontent {
+.col1 {
+	width: 100%;
+	padding: 0;
+	margin-right: 0;
+}
+
+.col2 {
 	width: 100%;
 	padding: 0;
 	margin-right: 0;
@@ -14,9 +22,12 @@
 		flex-direction: row;
 	}
 
-	.morecontent {
-		width: 500px;
+	.col2 {
+		width: 400px;
 		padding: 2rem;
-		margin-right: 1rem;
+	}
+
+	.col1 {
+		width: 900px;
 	}
 }
