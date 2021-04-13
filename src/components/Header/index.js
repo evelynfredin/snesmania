@@ -22,7 +22,6 @@ const Header = (props) => {
 			</div>
 			<nav className={openMenu ? 'nav active' : 'nav'}>
 				<ul className="menu">
-					<li>Home</li>
 					<li>Reviews</li>
 					<li>About</li>
 					<li>Contact</li>

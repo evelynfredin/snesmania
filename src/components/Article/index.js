@@ -10,7 +10,7 @@ const Article = (props) => {
 			</div>
 			<div className="article-list--col2">
 				<h3>{props.title}</h3>
-				<p>{props.excerpt}</p>
+				<div dangerouslySetInnerHTML={{ __html: props.excerpt }} />
 				<div className="metadata">
 					<p>By {props.author} </p>
 					<p>{props.date}</p>
@@ -24,9 +24,9 @@ Article.propTypes = {
 	picture: PropTypes.string,
 	altText: PropTypes.string,
 	title: PropTypes.string,
-	excerpt: PropTypes.string,
 	author: PropTypes.string,
-	date: PropTypes.string
+	date: PropTypes.string,
+	children: PropTypes.string
 };
 
 export default Article;

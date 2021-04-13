@@ -22,30 +22,7 @@ const Home = () => {
 						/>
 
 						<Title cname="latest" title="Latest" />
-						<ArticleList
-							title="Monster Hunter Rise Review"
-							picture={GameImg}
-							altText="Monster hunter hero in dark flames"
-							excerpt="Monster Hunter Rise's Wirebug mechanics and further quality of life improvements from World makes it one of the best games in the series to date."
-							author="Evelyn"
-							date="April 8, 2021"
-						/>
-						<ArticleList
-							title="Monster Hunter Rise Review"
-							picture={GameImg}
-							altText="Monster hunter hero in dark flames"
-							excerpt="Monster Hunter Rise's Wirebug mechanics and further quality of life improvements from World makes it one of the best games in the series to date."
-							author="Evelyn"
-							date="April 8, 2021"
-						/>
-						<ArticleList
-							title="Monster Hunter Rise Review"
-							picture={GameImg}
-							altText="Monster hunter hero in dark flames"
-							excerpt="Monster Hunter Rise's Wirebug mechanics and further quality of life improvements from World makes it one of the best games in the series to date."
-							author="Evelyn"
-							date="April 8, 2021"
-						/>
+						<ArticleList />
 					</div>
 					<div className="col2">More content</div>
 				</div>

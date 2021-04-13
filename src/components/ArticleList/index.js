@@ -1,20 +1,30 @@
 import React from 'react';
 import Article from '../Article';
 import GameImg from '../../assets/images/game.jpeg';
+import Axios from 'axios';
 
-const index = () => {
+const ArticleList = () => {
+	const [blogData, setBlogData] = React.useState([]);
+	React.useEffect(() => {
+		Axios.get('https://blog.noisereactor.com/wp-json/wp/v2/posts').then((res) => {
+			setBlogData(res.data);
+		});
+	}, [setBlogData, blogData]);
+
 	return (
 		<>
-			<Article
-				picture={GameImg}
-				altText="Game"
-				title="Megaman X 2"
-				excerpt="Kaze and the Wild Masks is exceptionally average in every way, and excels at its goal to create a clean, enjoyable, and nostalgic '90s platformer."
-				author="Evelyn"
-				date="23, September, 2021"
-			/>
+			{blogData.map((item, key) => (
+				<Article
+					key={key}
+					picture={GameImg}
+					altText={item.title.rendered}
+					title={item.title.rendered}
+					date={item.date}
+					excerpt={item.excerpt.rendered}
+				/>
+			))}
 		</>
 	);
 };
 
-export default index;
+export default ArticleList;
