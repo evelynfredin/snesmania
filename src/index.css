@@ -60,16 +60,9 @@ article {
 	stroke: currentColor;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1000px) {
 	.container {
-		max-width: 1000px;
-		margin: 0 auto;
-	}
-}
-
-@media (min-width: 1340px) {
-	.container {
-		max-width: 1300px;
+		max-width: 900px;
 		margin: 0 auto;
 	}
 }

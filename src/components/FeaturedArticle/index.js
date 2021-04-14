@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import parse from 'html-react-parser';
 import './featuredarticle.css';
 
 const FeaturedArticle = (props) => {
@@ -7,7 +8,7 @@ const FeaturedArticle = (props) => {
 		<article className="featuredArticle">
 			<h3>{props.title}</h3>
 			<img src={props.picture} alt={props.altText} />
-			<p className="excerpt">{props.excerpt}</p>
+			<div className="excerpt">{parse(props.excerpt)}</div>
 			<div className="metadata">
 				<p>By {props.author} </p>
 				<p>{props.date}</p>
@@ -22,7 +23,7 @@ FeaturedArticle.propTypes = {
 	altText: PropTypes.string,
 	excerpt: PropTypes.string,
 	author: PropTypes.string,
-	date: PropTypes.string
+	date: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 export default FeaturedArticle;

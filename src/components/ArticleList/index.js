@@ -1,7 +1,8 @@
 import React from 'react';
-import Article from '../Article';
-import GameImg from '../../assets/images/game.jpeg';
 import Axios from 'axios';
+import Title from '../../components/Title';
+import Article from '../Article';
+import FeaturedArticle from '../FeaturedArticle';
 
 const ArticleList = () => {
 	const [blogData, setBlogData] = React.useState([]);
@@ -13,16 +14,34 @@ const ArticleList = () => {
 
 	return (
 		<>
-			{blogData.map((item, key) => (
-				<Article
-					key={key}
-					picture={GameImg}
-					altText={item.title.rendered}
-					title={item.title.rendered}
-					date={item.date}
-					excerpt={item.excerpt.rendered}
-				/>
-			))}
+			<Title cname="featured" title="Featured" />
+			{blogData
+				.filter((item) => item.sticky === true)
+				.map((item, key) => (
+					<FeaturedArticle
+						key={key}
+						title={item.title.rendered}
+						picture={item.featured_media_src_url}
+						altText={item.title.rendered}
+						excerpt={item.excerpt.rendered}
+						author="Evelyn"
+						date={new Date(item.date).toISOString().split('T')[0]}
+					/>
+				))}
+
+			<Title cname="latest" title="Latest" />
+			{blogData
+				.filter((item) => item.sticky === false)
+				.map((item, key) => (
+					<Article
+						key={key}
+						picture={item.featured_media_src_url}
+						altText={item.title.rendered}
+						title={item.title.rendered}
+						date={new Date(item.date).toISOString().split('T')[0]}
+						excerpt={item.excerpt.rendered}
+					/>
+				))}
 		</>
 	);
 };
