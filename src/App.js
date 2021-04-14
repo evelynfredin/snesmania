@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import themes from './theme/themes';
 import Header from './components/Header';
+import SingleBlog from './pages/SingleBlog';
 import './App.css';
 
 // Pages
@@ -15,8 +17,15 @@ function App() {
 
 	return (
 		<main style={themes[theme]}>
-			<Header handleClick={toggleTheme} />
-			<Home />
+			<Router>
+				<Header handleClick={toggleTheme} />
+				<Route exact path="/">
+					<Home />
+				</Route>
+				<Route path="/blog/:slug">
+					<SingleBlog />
+				</Route>
+			</Router>
 		</main>
 	);
 }

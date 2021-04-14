@@ -24,6 +24,7 @@ const ArticleList = () => {
 						picture={item.featured_media_src_url}
 						altText={item.title.rendered}
 						excerpt={item.excerpt.rendered}
+						slug={item.slug}
 						author="Evelyn"
 						date={new Date(item.date).toISOString().split('T')[0]}
 					/>
@@ -40,6 +41,7 @@ const ArticleList = () => {
 						title={item.title.rendered}
 						date={new Date(item.date).toISOString().split('T')[0]}
 						excerpt={item.excerpt.rendered}
+						slug={item.slug}
 					/>
 				))}
 		</>

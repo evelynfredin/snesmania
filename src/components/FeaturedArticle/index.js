@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import parse from 'html-react-parser';
 import './featuredarticle.css';
+import { Link } from 'react-router-dom';
 
 const FeaturedArticle = (props) => {
 	return (
 		<article className="featuredArticle">
-			<h3>{props.title}</h3>
+			<Link to={`/blog/${props.slug}`}>
+				<h3>{props.title}</h3>
+			</Link>
 			<img src={props.picture} alt={props.altText} />
 			<div className="excerpt">{parse(props.excerpt)}</div>
 			<div className="metadata">

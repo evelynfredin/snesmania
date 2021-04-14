@@ -42,7 +42,7 @@
 	justify-content: space-between;
 }
 
-.article-list--meta a {
+.article-list--link {
 	color: var(--highlight);
 	text-transform: uppercase;
 	font-size: 0.8rem;
@@ -58,7 +58,7 @@
 	align-items: center;
 }
 
-.article-list--meta a:hover {
+.article-list--link:hover {
 	transform: translateX(1rem);
 }
 
