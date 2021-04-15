@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import Title from '../../components/Title';
 import Article from '../Article';
 import FeaturedArticle from '../FeaturedArticle';
 
 const ArticleList = () => {
+	const [isLoading, setIsLoading] = useState(true);
 	const [blogData, setBlogData] = React.useState([]);
 	React.useEffect(() => {
 		Axios.get('https://blog.noisereactor.com/wp-json/wp/v2/posts').then((res) => {
 			setBlogData(res.data);
+			setIsLoading(false);
 		});
 	}, [setBlogData, blogData]);
 
 	return (
 		<>
+			{isLoading && <div className="loading">Loading page...</div>}
+
 			<Title cname="featured" title="Featured" />
 			{blogData
 				.filter((item) => item.sticky === true)

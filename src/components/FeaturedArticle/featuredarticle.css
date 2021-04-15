@@ -7,7 +7,7 @@
 	width: 100%;
 }
 
-.featuredArticle h3 {
+.featuredArticle h2 {
 	text-transform: uppercase;
 	font-size: 2rem;
 	margin-bottom: 1rem;
@@ -23,5 +23,5 @@
 	padding: 0.4rem 1rem;
 	display: flex;
 	justify-content: space-between;
-	border-radius: 2px;
+	border-radius: 10px;
 }

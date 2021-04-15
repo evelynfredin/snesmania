@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import themes from './theme/themes';
 import Header from './components/Header';
 import SingleBlog from './pages/SingleBlog';
+import Footer from './components/Footer';
 import './App.css';
 
 // Pages
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/blog/:id">
 					<SingleBlog />
 				</Route>
+				<Footer></Footer>
 			</Router>
 		</main>
 	);

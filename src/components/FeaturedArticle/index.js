@@ -8,13 +8,13 @@ const FeaturedArticle = (props) => {
 	return (
 		<article className="featuredArticle">
 			<Link to={`/blog/${props.id}`}>
-				<h3>{props.title}</h3>
+				<h2>{props.title}</h2>
 				<img src={props.picture} alt={props.altText} />
 			</Link>
 			<div className="excerpt">{parse(props.excerpt)}</div>
 			<div className="metadata">
 				<p>By {props.author} </p>
-				<p>{props.date}</p>
+				<p>Published on: {props.date}</p>
 			</div>
 		</article>
 	);
@@ -27,7 +27,7 @@ FeaturedArticle.propTypes = {
 	excerpt: PropTypes.string,
 	author: PropTypes.string,
 	date: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-	id: PropTypes.string
+	id: PropTypes.number
 };
 
 export default FeaturedArticle;
