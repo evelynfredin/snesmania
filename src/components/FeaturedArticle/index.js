@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 const FeaturedArticle = (props) => {
 	return (
 		<article className="featuredArticle">
-			<Link to={`/blog/${props.slug}`}>
+			<Link to={`/blog/${props.id}`}>
 				<h3>{props.title}</h3>
+				<img src={props.picture} alt={props.altText} />
 			</Link>
-			<img src={props.picture} alt={props.altText} />
 			<div className="excerpt">{parse(props.excerpt)}</div>
 			<div className="metadata">
 				<p>By {props.author} </p>
@@ -26,7 +26,8 @@ FeaturedArticle.propTypes = {
 	altText: PropTypes.string,
 	excerpt: PropTypes.string,
 	author: PropTypes.string,
-	date: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+	date: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	id: PropTypes.string
 };
 
 export default FeaturedArticle;

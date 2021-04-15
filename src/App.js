@@ -22,7 +22,7 @@ function App() {
 				<Route exact path="/">
 					<Home />
 				</Route>
-				<Route path="/blog/:slug">
+				<Route path="/blog/:id">
 					<SingleBlog />
 				</Route>
 			</Router>
