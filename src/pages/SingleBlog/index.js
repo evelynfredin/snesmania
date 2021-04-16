@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
-import Axios from 'axios';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import SingleArtcicle from '../../components/ArticleSingle';
+import GetBlogData from '../../functions/GetBlogData';
 
 const SingleBlog = () => {
 	const { id } = useParams();
-	const [isLoading, setIsLoading] = useState(true);
-	const [blogData, setBlogData] = React.useState([]);
-	React.useEffect(() => {
-		Axios.get('https://blog.noisereactor.com/wp-json/review-grp/acf').then((res) => {
-			setBlogData(res.data);
-			setIsLoading(false);
-		});
-	}, [setBlogData, blogData]);
+
+	const { data, isLoading, error } = GetBlogData('review-grp/acf');
 
 	return (
 		<div>
-			{isLoading && <div className="loading">Loading article...</div>}
+			{isLoading && <div className="message">Loading article...</div>}
+			{error && <div className="message">{error}</div>}
 
-			{blogData
+			{data
 				.filter((item) => item.ID === parseInt(id))
 				.map((item, key) => (
 					<SingleArtcicle

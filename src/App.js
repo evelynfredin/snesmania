@@ -9,6 +9,7 @@ import './App.css';
 
 // Pages
 import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
 	const [theme, setTheme] = useState('light');
@@ -27,6 +28,9 @@ function App() {
 					</Route>
 					<Route path="/blog/:id/">
 						<SingleBlog />
+					</Route>
+					<Route path="/about">
+						<About />
 					</Route>
 					<Footer />
 				</ScrollToTop>

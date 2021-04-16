@@ -65,7 +65,7 @@ a {
 	color: var(--primary);
 }
 
-.loading {
+.message {
 	display: flex;
 	justify-content: center;
 	align-items: center;

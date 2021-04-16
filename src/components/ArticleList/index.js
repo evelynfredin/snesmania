@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
-import Axios from 'axios';
 import Title from '../../components/Title';
 import Article from '../Article';
 import FeaturedArticle from '../FeaturedArticle';
+import GetBlogData from '../../functions/GetBlogData';
 
 const ArticleList = () => {
-	const [isLoading, setIsLoading] = useState(true);
-	const [blogData, setBlogData] = React.useState([]);
-	React.useEffect(() => {
-		Axios.get('https://blog.noisereactor.com/wp-json/wp/v2/posts').then((res) => {
-			setBlogData(res.data);
-			setIsLoading(false);
-		});
-	}, [setBlogData, blogData]);
+	const { data, isLoading, error } = GetBlogData('wp/v2/posts');
 
 	return (
 		<>
-			{isLoading && <div className="loading">Loading page...</div>}
+			{isLoading && <div className="message">Loading page...</div>}
+			{error && <div className="message">{error}</div>}
 
 			<Title cname="featured" title="Featured" />
-			{blogData
+			{data
 				.filter((item) => item.sticky === true)
 				.map((item, key) => (
 					<FeaturedArticle
@@ -35,7 +28,7 @@ const ArticleList = () => {
 				))}
 
 			<Title cname="latest" title="Latest" />
-			{blogData
+			{data
 				.filter((item) => item.sticky === false)
 				.map((item, key) => (
 					<Article
