@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import themes from './theme/themes';
 import Header from './components/Header';
 import SingleBlog from './pages/SingleBlog';
+import Reviews from './pages/AllReviews';
 import Footer from './components/Footer';
 import ScrollToTop from './functions/ScrollToTop';
 import './App.css';
@@ -31,6 +32,9 @@ function App() {
 					</Route>
 					<Route path="/about">
 						<About />
+					</Route>
+					<Route path="/reviews">
+						<Reviews />
 					</Route>
 					<Footer />
 				</ScrollToTop>

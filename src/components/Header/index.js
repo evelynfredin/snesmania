@@ -28,10 +28,12 @@ const Header = (props) => {
 					<Link to={'/'}>
 						<li>Home</li>
 					</Link>
+					<Link to={'/reviews'}>
+						<li>Reviews</li>
+					</Link>
 					<Link to={'/about'}>
 						<li>About</li>
 					</Link>
-					<li>Contact</li>
 					<li className="bulbContainer" aria-label="Toggle theme" onClick={props.handleClick}>
 						<img src={BulbIcon} alt="" className="bulb" />
 					</li>

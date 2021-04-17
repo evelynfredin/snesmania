@@ -1,0 +1,38 @@
+.search-field {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.search-field input {
+	width: 100%;
+	margin-right: 0.6rem;
+	padding: 0.8rem;
+	border: var(--highlight) 1px solid;
+	background: var(--inverted);
+	font-size: 16px;
+}
+
+.search-field input::placeholder {
+	color: var(--primary);
+}
+
+.search-icon {
+	width: 30px;
+}
+
+@media (min-width: 700px) {
+	.search-field {
+		width: 350px;
+		margin-top: 0;
+	}
+
+	.search-field input {
+		padding: 0.5rem;
+	}
+
+	.search-icon {
+		width: 20px;
+	}
+}
