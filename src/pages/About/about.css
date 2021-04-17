@@ -1,0 +1,19 @@
+.about {
+	width: 100vw;
+	margin-top: -4px;
+	height: 75vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about h2 {
+	margin: 2rem 0;
+	font-size: 3rem;
+}
+
+.about p {
+	margin-top: 1rem;
+	font-size: 18px;
+	line-height: 1.6;
+}

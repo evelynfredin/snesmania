@@ -1,48 +1,55 @@
-import Title from '../../components/Title';
-import Article from '../Article';
-import FeaturedArticle from '../FeaturedArticle';
-import GetBlogData from '../../functions/GetBlogData';
+import React from 'react';
+import PropTypes from 'prop-types';
+import parse from 'html-react-parser';
+import './article.css';
+import { Link } from 'react-router-dom';
 
-const ArticleList = () => {
-	const { data, isLoading, error } = GetBlogData('wp/v2/posts');
-
+const ArticleList = (props) => {
 	return (
-		<>
-			{isLoading && <div className="message">Loading page...</div>}
-			{error && <div className="message">{error}</div>}
-
-			<Title cname="featured" title="Featured" />
-			{data
-				.filter((item) => item.sticky === true)
-				.map((item, key) => (
-					<FeaturedArticle
-						key={key}
-						title={item.title.rendered}
-						picture={item.featured_media_src_url}
-						altText={item.title.rendered}
-						excerpt={item.excerpt.rendered}
-						id={item.id}
-						author="Evelyn"
-						date={new Date(item.date).toISOString().split('T')[0]}
-					/>
-				))}
-
-			<Title cname="latest" title="Latest" />
-			{data
-				.filter((item) => item.sticky === false)
-				.map((item, key) => (
-					<Article
-						key={key}
-						picture={item.featured_media_src_url}
-						altText={item.title.rendered}
-						title={item.title.rendered}
-						date={new Date(item.date).toISOString().split('T')[0]}
-						excerpt={item.excerpt.rendered}
-						id={item.id}
-					/>
-				))}
-		</>
+		<article className="article-list">
+			<div className="article-list--col1">
+				<img src={props.picture} alt={props.altText} />
+			</div>
+			<div className="article-list--col2">
+				<Link to={`/blog/${props.id}`}>
+					<h3>{props.title}</h3>
+				</Link>
+				<div className="article-list--excerpt">{parse(props.excerpt)}</div>
+				<div className="article-list--meta">
+					<p className="article-list--date">Published on: {props.date}</p>
+					<Link to={`/blog/${props.id}`}>
+						<p className="article-list--link">
+							Read more
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								className="arrow"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M17 8l4 4m0 0l-4 4m4-4H3"
+								/>
+							</svg>
+						</p>
+					</Link>
+				</div>
+			</div>
+		</article>
 	);
+};
+
+ArticleList.propTypes = {
+	picture: PropTypes.string,
+	altText: PropTypes.string,
+	title: PropTypes.string,
+	author: PropTypes.string,
+	date: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	excerpt: PropTypes.string,
+	id: PropTypes.number
 };
 
 export default ArticleList;
