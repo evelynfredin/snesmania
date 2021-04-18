@@ -54,14 +54,20 @@ ul.menu li {
 	padding: 5px;
 }
 
-.bulbContainer {
-	background: wheat;
+button.bulbContainer {
 	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+button.bulbContainer:hover {
+	opacity: 0.8;
 }
 
 @media (min-width: 740px) {
 	ul.menu {
 		display: flex;
+		align-items: center;
 		background-color: transparent;
 	}
 
@@ -72,6 +78,7 @@ ul.menu li {
 	}
 	nav {
 		display: flex;
+		margin-top: 0;
 	}
 
 	.toggler {
@@ -80,10 +87,11 @@ ul.menu li {
 	header {
 		display: flex;
 		justify-content: space-between;
+		height: auto;
 		align-items: center;
 	}
 
-	.bulbContainer {
+	button.bulbContainer {
 		display: flex;
 		align-items: center;
 		justify-content: center;

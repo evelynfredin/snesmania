@@ -30,7 +30,7 @@ const SearchResults = () => {
 						picture={item.featured_media_src_url}
 						altText={item.title.rendered}
 						title={item.title.rendered}
-						date="10"
+						date={new Date(item.date).toISOString().split('T')[0]}
 						excerpt={item.excerpt.rendered}
 						id={item.id}
 					/>

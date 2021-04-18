@@ -6,7 +6,7 @@ const SearchField = (props) => {
 	return (
 		<div className="search-field">
 			<input onChange={props.handleChange} placeholder="The Legend of Zelda..." />
-			<label>
+			<button className="search">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					className="search-icon"
@@ -19,7 +19,7 @@ const SearchField = (props) => {
 						clipRule="evenodd"
 					/>
 				</svg>{' '}
-			</label>
+			</button>
 		</div>
 	);
 };

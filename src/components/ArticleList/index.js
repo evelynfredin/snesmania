@@ -8,7 +8,9 @@ const ArticleList = (props) => {
 	return (
 		<article className="article-list">
 			<div className="article-list--col1">
-				<img src={props.picture} alt={props.altText} />
+				<Link to={`/blog/${props.id}`}>
+					<img src={props.picture} alt={props.altText} />
+				</Link>
 			</div>
 			<div className="article-list--col2">
 				<Link to={`/blog/${props.id}`}>

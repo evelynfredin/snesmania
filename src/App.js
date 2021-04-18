@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import themes from './theme/themes';
 import Header from './components/Header';
 import SingleBlog from './pages/SingleBlog';
@@ -11,6 +11,7 @@ import './App.css';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
+import NotFoud from './pages/NotFound';
 
 function App() {
 	const [theme, setTheme] = useState('light');
@@ -24,18 +25,23 @@ function App() {
 			<Router>
 				<ScrollToTop>
 					<Header handleClick={toggleTheme} />
-					<Route exact path="/">
-						<Home />
-					</Route>
-					<Route path="/blog/:id/">
-						<SingleBlog />
-					</Route>
-					<Route path="/about">
-						<About />
-					</Route>
-					<Route path="/reviews">
-						<Reviews />
-					</Route>
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route path="/blog/:id/">
+							<SingleBlog />
+						</Route>
+						<Route path="/about">
+							<About />
+						</Route>
+						<Route path="/reviews">
+							<Reviews />
+						</Route>
+						<Route path="*">
+							<NotFoud />
+						</Route>
+					</Switch>
 					<Footer />
 				</ScrollToTop>
 			</Router>

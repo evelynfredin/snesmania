@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from '../Logo';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import MenuToggler from '../MenuToggler';
 import OpenMenuIcon from '../../assets/images/openMenu.svg';
 import CloseMenuIcon from '../../assets/images/closeMenu.svg';
-import BulbIcon from '../../assets/images/bulb.svg';
 import './header.css';
 
 const Header = (props) => {
 	const [openMenu, setOpenMenu] = useState(false);
 	const openIcon = OpenMenuIcon;
 	const closeIcon = CloseMenuIcon;
+
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		if (pathname !== '404') setOpenMenu(false);
+	}, [pathname]);
 
 	return (
 		<header className="container">
@@ -34,8 +40,11 @@ const Header = (props) => {
 					<Link to={'/about'}>
 						<li>About</li>
 					</Link>
-					<li className="bulbContainer" aria-label="Toggle theme" onClick={props.handleClick}>
-						<img src={BulbIcon} alt="" className="bulb" />
+					<li>
+						<button className="bulbContainer" aria-label="Toggle theme" onClick={props.handleClick}>
+							{' '}
+							🌓
+						</button>
 					</li>
 				</ul>
 			</nav>

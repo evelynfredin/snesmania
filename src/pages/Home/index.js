@@ -4,7 +4,7 @@ import FeaturedArticle from '../../components/FeaturedArticle';
 import GetBlogData from '../../functions/GetBlogData';
 
 const Home = () => {
-	const { data, isLoading, error } = GetBlogData('wp/v2/posts/?per_page=3');
+	const { data, isLoading, error } = GetBlogData('wp/v2/posts/?per_page=5');
 
 	return (
 		<section className="container">
