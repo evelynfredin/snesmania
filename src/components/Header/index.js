@@ -12,7 +12,6 @@ const Header = (props) => {
 	const [openMenu, setOpenMenu] = useState(false);
 	const openIcon = OpenMenuIcon;
 	const closeIcon = CloseMenuIcon;
-
 	const { pathname } = useLocation();
 
 	useEffect(() => {

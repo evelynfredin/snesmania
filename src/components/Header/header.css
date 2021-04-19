@@ -58,6 +58,7 @@ button.bulbContainer {
 	cursor: pointer;
 	border: none;
 	background: none;
+	font-size: 1.3rem;
 }
 
 button.bulbContainer:hover {

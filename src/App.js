@@ -11,7 +11,7 @@ import './App.css';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
-import NotFoud from './pages/NotFound';
+import NotFound from './pages/NotFound';
 
 function App() {
 	const [theme, setTheme] = useState('light');
@@ -39,7 +39,7 @@ function App() {
 							<Reviews />
 						</Route>
 						<Route path="*">
-							<NotFoud />
+							<NotFound />
 						</Route>
 					</Switch>
 					<Footer />
